@@ -1,0 +1,29 @@
+﻿@model Passanger
+@{
+    ViewData["Title"] = "Add passanger";
+}
+
+@section styles{
+    <link rel="stylesheet" href="~/css/CreatePassangerStyle.css" />
+}
+
+
+<div id="container">
+    <form method="post" asp-controller="Passanger" asp-action="Create">
+
+        <label class="cpTitle">Add new passanger:</label>
+        <br />
+        <label class="cpLabel">First name: </label>
+        <input type="text" asp-for="FirstName" class="cpInput" />
+        <br />
+        <label class="cpLabel">Last name: </label>
+        <input type="text" asp-for="LastName" class="cpInput" />
+        <br />
+        <label class="cpLabel">Age: </label>
+        <input type="text" asp-for="Age" class="cpInput" />
+        <br />
+        <input type="submit" value="Add" class="btn btn-primary cpInput" />
+
+    </form>
+</div>
+

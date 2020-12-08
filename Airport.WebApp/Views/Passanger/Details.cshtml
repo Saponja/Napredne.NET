@@ -1,0 +1,14 @@
+﻿@model Passanger
+@{ 
+    ViewData["Title"] = "Details";
+}
+
+<div class="flex_container">
+    <h2>Passanger: </h2>
+    <h3>Id: @Model.PassangerId</h3>
+    <h3>FirstName: @Model.FirstName</h3>
+    <h3>LastName: @Model.LastName</h3>
+    <h3>LastName: @Model.Age</h3>
+    <h3>@Html.ActionLink("Seats", "Seats", "Passanger", new { id = Model.PassangerId })</h3>
+</div>
+

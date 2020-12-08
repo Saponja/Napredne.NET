@@ -1,0 +1,24 @@
+﻿@model List<Seat>
+@{ 
+    ViewData["Title"] = "Seats";
+}
+
+<table class= "table table-bordered table-dark">
+    <thead>
+        <tr class="border-dark">
+            <th>Id</th>
+            <th>Class</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Seat s in Model)
+        {
+        <tr>
+            <td>@s.SeatId</td>
+            <td>@s.Class</td>
+            <td>@s.Price</td>
+        </tr>
+        }
+    </tbody>
+</table>
