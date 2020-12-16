@@ -16,10 +16,12 @@ namespace Airport.Data.UnitOfWork
             Airplane = new RepositoryAirplane(context);
             Passanger = new RepositoryPassanger(context);
             Reservation = new RepositoryReservation(context);
+            Seat = new RepositorySeat(context);
         }
         public IRepositoryAirplane Airplane { get; set; }
         public IRepositoryPassanger Passanger { get; set; }
         public IRepositoryReservation Reservation { get; set; }
+        public IRepositorySeat Seat { get; set; }
 
         public void Commit()
         {

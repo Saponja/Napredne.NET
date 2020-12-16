@@ -11,6 +11,8 @@ namespace Airport.Data.UnitOfWork
         public IRepositoryPassanger Passanger { get; set; }
         public IRepositoryReservation Reservation { get; set; }
 
+        public IRepositorySeat Seat { get; set; }
+
         void Commit();
     }
 }

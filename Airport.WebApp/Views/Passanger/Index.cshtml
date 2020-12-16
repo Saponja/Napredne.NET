@@ -9,11 +9,10 @@
 
 <table class= "table table-bordered table-dark">
     <thead>
-        <tr class="text-danger">
+        <tr class="text-xl-center">
             <th>Id</th>
             <th>FirstName</th>
             <th>LastName</th>
-            <th>Details</th>
         </tr>
     </thead>
     <tbody>
@@ -23,11 +22,14 @@
             <td>@p.PassangerId</td>
             <td>@p.FirstName</td>
             <td>@p.LastName</td>
-            <td>@Html.ActionLink("Details", "Details", "Passanger", new { id = p.PassangerId })</td>
-            <!--<td class=" border-danger">!!!Html.ActionLink("Remove", "Delete", "Passanger", new { id = p.PassangerId })</td> -->
-            <td><form  method="post" asp-controller="Passanger" asp-action="Delete" asp-route-id="@p.PassangerId">
-                    <input type="submit" value="Remove" class="btn btn-outline-danger"/>
-                </form></td>
+            <td>
+                <form  method="get" asp-controller="Passanger" asp-action="Details" asp-route-id="@p.PassangerId" style="display:inline";>
+                        <input type="submit" value="Details" class="btn-sm btn-primary"/>
+                </form>
+                <form  method="post" asp-controller="Passanger" asp-action="Delete" asp-route-id="@p.PassangerId" style="display:inline";>
+                        <input type="submit" value="Remove" class="btn-sm btn-danger"/>
+                </form>
+            </td>
 
 
         </tr>

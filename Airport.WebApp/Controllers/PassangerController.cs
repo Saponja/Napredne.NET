@@ -51,6 +51,14 @@ namespace Airport.WebApp.Controllers
                 return View("CreatePassanger");
             }
 
+            bool exists = unitOfWork.Passanger.Search(p => p.FirstName == passanger.FirstName).Any();
+
+            if (exists)
+            {
+                ModelState.AddModelError("PassangerName", "Passanger with this name already exists!");
+                return View("CreatePassanger");
+            }
+
             unitOfWork.Passanger.Add(passanger);
             unitOfWork.Commit();
             //return View("Index", unitOfWork.Passanger.GetAll());

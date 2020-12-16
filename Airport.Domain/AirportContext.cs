@@ -11,6 +11,8 @@ namespace Airport.Domain
         public DbSet<Airplane> Airplanes { get; set; }
         public DbSet<Passanger> Passangers { get; set; }
 
+        public DbSet<Seat> Seat { get; set; }
+
         public DbSet<Reservation> Reservations { get; set; }
 
 

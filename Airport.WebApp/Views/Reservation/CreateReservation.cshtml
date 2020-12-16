@@ -1,0 +1,32 @@
+﻿@model Airport.WebApp.Models.ReservationViewModel
+@{
+    ViewData["Title"] = "Reservation";
+}
+
+@section styles{
+    <link rel="stylesheet" href="~/css/Reservation.css" />
+}
+
+
+<div id="container">
+
+    <form method="post" asp-controller="Reservation" asp-action="CreateReservation">
+        <label class="crTitle">Add new reservation:</label>
+        <br />
+        <label class="crLabel">Date and time: </label>
+        <input type="text" asp-for="Date" class="crInput" />
+        @Html.ValidationMessage("DateError")
+        @Html.ValidationMessage("DateError2")
+        <br />
+        <label class="crLabel">Select passanger: </label>
+        <select asp-for="PassangerId" asp-items="@Model.Passangers" class="crInput">
+        </select>
+        <br />
+        <label class="crLabel">Select seat:</label>
+        <select asp-for="SeatId" asp-items="@Model.Seats" class="crInput">
+        </select>
+        <br />
+        <input type="submit" value="Add" class="btn btn-primary crInput" />
+    </form>
+
+</div>

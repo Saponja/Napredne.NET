@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Airport.Domain.Validation;
+using System.Collections.Generic;
 
 namespace Airport.Domain
 {
@@ -7,6 +8,8 @@ namespace Airport.Domain
         public int PassangerId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        [PassangerAge (ErrorMessage = "Age must be between 3 and 93")]
         public int Age { get; set; }
         public List<Reservation> Seats { get; set; }
 

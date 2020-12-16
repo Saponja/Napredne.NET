@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Airport.Data.Implementation
 {
@@ -49,6 +50,11 @@ namespace Airport.Data.Implementation
         public void Remove(Passanger item)
         {
             context.Passangers.Remove(item);
+        }
+
+        public List<Passanger> Search(Expression<Func<Passanger, bool>> p)
+        {
+            return context.Passangers.Where(p).ToList();
         }
     }
 }
